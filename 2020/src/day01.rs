@@ -9,10 +9,10 @@ pub fn part1(input: String) {
 fn two_sum(nums: Vec<i32>, target: i32) -> (i32, i32) {
     let mut seen = HashSet::new();
     for num in nums {
-        if seen.contains(&num) {
+        if seen.contains(&(target - num)) {
             return (target - num, num);
         }
-        seen.insert(target - num);
+        seen.insert(num);
     }
 
     panic!("No solution found");
